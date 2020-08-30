@@ -11,16 +11,11 @@ services:
             MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
             MONGO_INITDB_DATABASE: ${DB_NAME}
     
-    mongo-express:
-        image: mongo-express
-        restart: always
+    dauphinois:
+        build: ./server
+        image: dauphinois:latest
         ports:
-            - 8081:8081
-        environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: ${DB_USER}
-            ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_PASS}
-
+            - 3000:3000
 volumes: 
     dbdata:
-
-        
+    
