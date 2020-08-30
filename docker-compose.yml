@@ -16,6 +16,13 @@ services:
         image: dauphinois:latest
         ports:
             - 3000:3000
+
+    client: 
+        build: ./client
+        image: client:latest
+        ports:
+            - 8080:8080
+            
 volumes: 
     dbdata:
     

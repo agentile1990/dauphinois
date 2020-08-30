@@ -20,4 +20,12 @@ services:
             - 3000:3000
         volumes:
             - "./server:/usr/src/app"
+
+    client: 
+        build: 
+            context: ./client
+            dockerfile: Dockerfile-dev
+        image: client:latest
+        volumes:
+            - "./client:/usr/src/app"
         
