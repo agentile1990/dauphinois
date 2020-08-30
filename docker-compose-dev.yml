@@ -16,8 +16,6 @@ services:
             context: ./server
             dockerfile: Dockerfile-dev
         image: dauphinois:latest
-        ports:
-            - 3000:3000
         volumes:
             - "./server:/usr/src/app"
 
