@@ -13,6 +13,10 @@ app.use(cookieParser());
 
 app.use('/recipes', require('./apps/recipes/recipes.app'));
 
+app.use('/*', (req, res) => {
+    return res.status(404).send({ message: 'Not Found' });
+});
+
 // error handler
 // next() required for wrap()
 // eslint-disable-next-line no-unused-vars
